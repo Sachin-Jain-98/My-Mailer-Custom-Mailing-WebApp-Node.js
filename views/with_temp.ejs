@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Dashboard</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all"> 
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+
+</head>
+
+<body class="animsition">
+        <% if (locals.messages) { %>
+
+            <script language="javascript">
+            alert("<%= messages.msg %>");
+            </script>
+        
+                <% } %>
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="index.html">
+                            <img src="images/icon/logo.png" alt="CoolAdmin" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li>
+                            <a href="<%= contacts %>">
+                                <i class="fas fa-chart-bar"></i>Contacts</a>
+                        </li>
+                        <li>
+                            <a href="<%= template %>">
+                                <i class="fas fa-table"></i>Templates</a>
+                        </li>
+                        <li>
+                            <a href="<%= sentmails %>">
+                                <i class="far fa-check-square"></i>Sent Mails</a>
+                        </li>
+                        <%if(priv==100){%>
+                            <li>
+                                    <a href="<%= link3 %>">
+                                    <i class="far fa-chart-bar"></i>Admin Privelages</a>
+                            </li>
+                            <li>
+                                <a href="<%= link4 %>">
+                                        <i class="far fa fa-plus-square"></i>Signup Requests</a>
+                            </li>
+                        <%}%>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+                <a href="<%= link1 %>">
+                    <img src="images/icon/logo.png" alt="Cool Admin" />
+                </a>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li>
+                            <a href="<%= contacts %>">
+                                <i class="fas fa-book"></i>Contacts</a>
+                        </li>
+                        <li>
+                            <a href="<%= template %>">
+                                <i class="fas fa-table"></i>Templates</a>
+                        </li>
+                        <li>
+                            <a href="<%= sentmails %>">
+                                <i class="fas fa-check-square"></i>Sent Mails</a>
+                        </li>
+                        <%if(priv==100){%>
+                            <li>
+                                    <a href="<%= link3 %>">
+                                    <i class="far fa-chart-bar"></i>Admin Privelages</a>
+                            </li>
+                            <li>
+                                <a href="<%= link4 %>">
+                                        <i class="far fa fa-plus-square"></i>Signup Requests</a>
+                            </li>
+                        <%}%>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                            <form class="form-header" action="" method="POST">
+                                <input class="au-input au-input--xl" type="hidden" name="search" placeholder="Search for datas &amp; reports..." />
+                            </form>
+                            <div class="header-button">
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="image">
+                                            <img src="images/icon/avatar-01.jpg" alt="<%=me[0].uname%>" />
+                                        </div>
+                                        <div class="content">
+                                            <a class="js-acc-btn" href="#"><%=me[0].uname%></a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="info clearfix">
+                                                <div class="image">
+                                                    <a href="#">
+                                                        <img src="images/icon/avatar-01.jpg" alt="<%=me[0].uname%>" />
+                                                    </a>
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a href="#"><%=me[0].uname%></a>
+                                                    </h5>
+                                                    <span class="email"><%=me[0].email%></span>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="<%= update %>">
+                                                        <i class="zmdi zmdi-account"></i>Update</a>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <a href="<%= logout %>">
+                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="container-fluid">
+                    <div class="col-lg-13">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong>Mail Editor</strong>
+                            </div>
+                            <div class="card-body card-block">
+                                    <form name="myform" class="form-horizontal" method="POST" action="/Email" enctype="multipart/form-data">
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label class=" form-control-label">From</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <p class="form-control-static"><%=me[0].email%></p>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label class=" form-control-label" for="select">Recipents</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                          <select name="toaddress" class="js-example-tags custom-select" multiple="multiple">
+                                            <% if(typeof tpem=='undefined'){}else{%>
+                                            <% if(typeof tpem=='string'){%>
+                                              <option value="<%= tpem%>" selected="selected"><%= tpem%></option>
+                                              <%}else{%>
+                                            <% for(var i=0; i < tpem.length ; i++){%>
+                                              <option value="<%= tpem[i]%>" selected="selected"><%= tpem[i]%></option>
+                                            <%} %>
+                                            <%} %>
+                                            <%} %>
+                                            <!--option>Select From Contacts</option-->
+                                            <% for(var i=0; i < cntct.length ; i++){%>
+                                            <option value="<%= cntct[i].Contact_mail%>"><%= cntct[i].Contact_name%></option>
+                                            <%} %>
+                                        </select>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label class=" form-control-label" for="select">Templates</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                          <select name="tplte" class="form-control" class="js-example-basic-single custom-select"  onchange="this.form.submit()">
+                                            <option>Select Templates</option>
+                                            <% for(var i=0; i < content.length ; i++){%>
+                                            <option><%= content[i].subject%></option>
+                                            <%} %>
+                                        </select>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label class=" form-control-label" for="text-input">Subject</label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <input name="sbj" class="form-control" id="text-input" type="text" value="<%= tpcontent[0].subject %>" placeholder="Mail Subject">
+                                            </div>
+                                        </div>
+                                    <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label class=" form-control-label" for="textarea-input">Mail Body</label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <textarea id="summernote" name="editordata"><%= tpcontent[0].body %></textarea>
+                                            </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label class=" form-control-label" for="file-input">Attachments</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input name="foo" class="form-control-file" id="file-input" type="file" multiple>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" id="myinput" name="custId" value="0">
+                                    <div class="card-footer">
+                                            <center><button onclick="DoSubmit()" class="btn btn-primary btn-sm" type="submit">
+                                                <i class="fa fa-dot-circle-o"></i> SEND
+                                            </button>
+                                            </center>
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+            <!-- END MAIN CONTENT-->
+            <!-- END PAGE CONTAINER-->
+        </div>
+
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+    <!-- include summernote css/js -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+            $(document).ready(function() {
+            $('.js-example-tags').select2({
+              tags:true,
+              tokenSeparators: [',', ' ']
+            });
+            }); 
+            $(document).ready(function() {
+            $('.js-example-basic-single').select2();
+            });
+            
+                $('#summernote').summernote({
+                    placeholder: 'Mail Body',
+                tabsize: 2,
+                width:875,
+                height: 150 
+                });
+              function DoSubmit(){
+              document.myform.myinput.value = '1';
+              return true;
+              }
+            </script> 
+    <!-- Main JS-->
+</body>
+</html>
+<!-- end document-->
+
+

@@ -1,0 +1,37 @@
+{
+  "name": "my-mailer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "csv-parse": "^4.12.0",
+    "csv-parser": "^2.3.0",
+    "ejs": "^2.6.1",
+    "email-validator": "^2.0.4",
+    "express": "^4.16.4",
+    "express-ejs-layouts": "^2.5.0",
+    "express-fileupload": "^1.2.0",
+    "express-session": "^1.16.1",
+    "express-sessions": "^1.0.6",
+    "formidable": "^1.2.1",
+    "json2csv": "^4.5.1",
+    "mongod": "^2.0.0",
+    "mongoose": "^5.5.8",
+    "node-fetch": "^2.5.0",
+    "nodemailer": "^6.1.1",
+    "nodemon": "^2.0.4",
+    "path": "^0.12.7",
+    "promise": "^8.0.3",
+    "promises": "^0.2.5"
+  }
+}
